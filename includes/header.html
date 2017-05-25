@@ -1,0 +1,94 @@
+<?php
+//start session
+if(!isset($_SESSION)){
+	session_start();
+}
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Naëva Arnould" />
+	<title><?php echo isset($title) ? $title : 'Nolark Casques : Sécurité et confort, nos priorités !'; ?></title>
+	<meta name="description" content="<?php echo isset($description) ? $description : 'Découvrez des casques moto dépassant même les exigences des tests de sécurité. Tous les casques Nolark au meilleur prix et avec en prime la livraison gratuite !'; ?>" />
+	<!--Social icon library -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+	
+	<!-- Personal styles -->
+	<link rel="stylesheet" href="css/social.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<?php 
+		//includes additional css styles if needed
+		if(isset($css)) echo "<link rel=\"stylesheet\" href=\"css/$css\"/>" ;
+	?>
+	
+    
+</head>
+<body>
+<!--Header -->
+	<header>
+	<!-- Contact bar -->
+		<div id="top">
+			<div class="wrapper">
+				<div id="top-left">
+					<a href="team.php" id="contact_team">Voir les membres de la team Nolark</a>
+					<span id="tel">Tel: 01 23 45 67 89</span>
+				</div>
+				<div id="top-right">
+					<div class="social">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="#"><i class="fa fa-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- Middle bar -->
+		<div id="middle">
+			<div class="wrapper">
+			
+				<div class="logo-wrapper">
+					<a href="/"><img src="img/logo.png" alt="Logo Nolark"/></a>
+				</div>
+				
+				<div id="middle_wrapper">
+					<div id="search-wrapper">
+						<form>
+							<input id="search_input" type="text" name="search" placeholder="ex: Casques cross, route, Scorpion..."autocomplete="off" />
+							<button type="submit">Go</button>
+						</form>
+					</div>
+					<?php
+					include 'html/cart_account.html';
+					?>
+				</div>
+			</div>
+		</div>
+	
+		<?php include 'includes/menu.php'; ?>
+		
+	</header>
+<!-- END Header -->
+
+<!-- Container -->
+
+	<div class="main">
+	
+	<?php
+	
+	include 'html/teaser_bar.html';
+		
+
+	
+
+	
+	
+
+

@@ -1,0 +1,51 @@
+<?php 
+	$quantity = $_SESSION['cart'][$produit_id];
+	 
+?>
+			
+<div class="cart_product" style="width: 100%" id="product_<?php echo $produit_id; ?>">
+	<div class="product_content" id="<?php echo $produit_id;?>">
+		<div class="cart_img">
+			<a href="#"><img src="img/products/<?php echo $image;?>" alt="product"/></a>
+		</div>
+					
+		<div class="cart_text">
+			<div class="product_name"><a href="product.php?id=<?php echo $produit_id; ?>"><?php echo $modele;?></a></div>
+			<div class="product_brand"><?php echo $marque;?></div>
+		</div>
+					
+		<div class="cart_quantity">
+			<input class="quantity" id="<?php echo $produit_id; ?>" type="number" name="quantity_<?php echo $produit_id; ?>" min="0" max="<?php echo $stock;?>" value="<?php echo $quantity;?>"/>
+			<input type="hidden" name="max_quantity_<?php echo $produit_id; ?>" value="<?php echo $stock;?>"/>
+			<input type="submit" name="update_cart" id="<?php echo $produit_id; ?>" value="Mettre à jour"/>
+		</div>
+		
+		<div class="delete button" id="<?php echo $produit_id; ?>">
+			Supprimer du panier
+		</div>
+		
+		<div class="confirmation" id="confirmation_<?php echo $produit_id; ?>">
+			<div class="warning message">
+				Etes-vous sur de vouloir supprimer?
+			</div>
+			
+			<div class="confirmation_delete button" id="<?php echo $produit_id; ?>" >
+				Supprimer
+			</div>
+			
+			<div class="cancel button">
+				Annuler
+			</div>
+		</div>
+		
+		<div class="cart_price">
+			<?php	if($should_price != 0):	?>
+							
+			<div class="product_should_price"><?php echo $should_price;?>€</div>
+							
+			<?php	endif;	?>
+							
+			<div class="product_price"><span id="price_<?php echo $produit_id; ?>"><?php echo $prix;?></span>€</div>
+		</div>
+	</div>
+</div>

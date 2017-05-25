@@ -1,0 +1,30 @@
+<?php
+	//$cart_number = isset($_COOKIE['cart_number']) ? $_COOKIE['cart_number'] : 0;
+	
+	$cart_number = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+	
+	if(isset($_SESSION['user_id'])){
+	
+		$link = 'account.php?id=' . $_SESSION['user_id'];
+		$link_text = 'Bonjour ' . $_SESSION['first_name'];
+		$cart_number = $_SESSION['cart_number'];
+		
+	} else {
+		$link = 'login.php';
+		$link_text = 'Se connecter';
+	}
+?>
+
+<div id="account_cart_wrapper">
+
+	<div id="account"><a href="<?php echo $link; ?>"><?php echo $link_text; ?></div>
+	
+	<div id="cart"><a href="cart.php">
+	( <span id='cart_number'>
+	<?php
+		
+		echo $cart_number;
+	?>
+	</span> ) Panier</a></div>
+	
+</div>

@@ -1,0 +1,32 @@
+<div class="register">
+	
+	<h1>Enregistrez-vous</h1>
+	
+	<form action="register.php" method="post">
+		<p>Prénom: <input type="text" name="first_name" size="20" maxlength="20"/> </p>
+		<p>Nom: <input type="text" name="last_name" size="20" maxlength="40"/> </p>
+		<p>Genre:	<select name="gender">
+						<option>Privé</option>
+						<option value="f">Femme</option>
+						<option value="m">Homme</option>
+						<option value="other">Autre</option>
+						
+					</select>
+			</p>
+		<p>Date de naissance: <input type="date" name="date_birth"/> </p>
+		<p>Adresse: <input type="text" name="address"/> </p>
+		<p>Code postal: <input type="text" name="zip"/> </p>
+		<p>Téléphone: <input type="tel" name="tel"/> </p>
+		<p>Email: <input type="email" name="email" size="20" maxlength="60"/> </p>
+		<p>Nom d'utilisateur: <input type="text" name="login" size="20" maxlength="20"/> </p>
+		<p>Mot de passe: <input type="password" name="password" size="20" maxlength="40"/> </p>
+		<p>Confirmer Mot de passe: <input type="password" name="password_confirm" size="20" maxlength="40"/> </p>
+		
+		<p><input type="submit" name="submit" value="S'inscrire"/></p>
+	</form>
+	
+	<div id="already_registred">
+		<a href="login.php">Déjà inscrit(e) ?</a>
+	</div>
+	
+</div>

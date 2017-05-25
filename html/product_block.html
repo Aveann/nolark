@@ -1,0 +1,70 @@
+<div class="product product_<?php echo $product_class;?>">
+	<div class="product_content">
+					<?php	if($reduction != 0):	?>
+						<div class="product_tag">
+							<h3>-<?php echo $reduction;?>%</h3>
+						</div>
+							
+					<?php	endif;	?>
+					
+					<div class="product_img">
+						<a href="#"><img src="img/products/<?php echo $image;?>" alt="product"/></a>
+					</div>
+					
+					<div class="product_text">
+						<div class="product_name"><a href="product.php?id=<?php echo $produit_id; ?>"><?php echo $modele;?></a></div>
+						<div class="marque"><?php echo $marque;?></div>
+					</div>
+					
+					<div class="product_price">
+							<?php	if($should_price != 0):	?>
+							
+							<div class="product_should_price"><?php echo $should_price;?>€</div>
+							
+							<?php	endif;	?>
+							
+							<div class="product_real_price"><?php echo $prix;?>€</div>
+					</div>
+					
+					<?php	if($stock < 10):	?>
+						<div class="product_stock">
+							<?php	if($stock <= 0):	?>
+								<p class="rupture"> Rupture de stock. Exemplaires en cours d'acheminement.</p>
+							<?php	else:	?>
+								<p class="low_stock"> Plus que <?php echo $stock; ?> produit(s) en stock</p>
+							<?php	endif;	?>
+						</div>
+					<?php	endif;	?>
+					
+					<?php	if($note != 0):	?>
+					
+						<div class="star_ratings">
+							<div class="star_ratings_top" style="width:<?php echo $note * 20;?>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+							<div class="star_ratings_bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+						</div>
+						
+					<?php	endif;	?>
+					
+					<?php	if(isset($_SESSION['cart']) && array_key_exists($produit_id, $_SESSION['cart'])): 
+					
+						$quantity = $_SESSION['cart'][$produit_id];
+					?>
+					
+					<div class="added add" id="<?php echo $produit_id; ?>">Ajouté (x <?php	echo $quantity;	?>)</div>
+					
+					<?php else : ?>
+					
+					<?php	if($stock == 0):	?>
+						<div class="alert add tooltip">
+							<span class="tooltiptext">Etre alerté dès que de nouveaux exemplaires arrivent.</span>
+						</div>
+					<?php	else:	?>
+						<div class="add_product add tooltip" id="<?php echo $produit_id; ?>">
+							<span class="tooltiptext">Ajouter le produit au panier.</span>
+						</div>
+					<?php	endif;	?>
+					
+					<?php endif; ?>	
+					<div class="see_product"><a href="product.php?id=<?php echo $produit_id; ?>">Voir produit</a></div>
+				</div>
+</div>

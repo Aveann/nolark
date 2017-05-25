@@ -1,0 +1,33 @@
+/* Carousel */
+
+@keyframes slidy {
+0% { left: 0%; }
+
+30% { left: 0%; }
+33% { left:-100%; }
+
+60% { left: -100%; }
+66% { left:-200%; }
+
+90% { left: -200%; }
+99% { left:0%; }
+}
+
+#carousel { 
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+#carousel img{
+	height: 400px;
+	width: 100%;
+}
+
+#carousel figure img { width: 33.333%; }
+
+#carousel figure { 
+  position: relative;
+  text-align: left;
+  font-size: 0;
+  animation: 18s slidy infinite; 
+}

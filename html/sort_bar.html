@@ -1,0 +1,69 @@
+<?php
+	include 'url.php';
+	include_once 'page_navigation_functions.php';
+	
+	//form a new url with the parameter 'page=' at the end
+	$url = form_new_url('page');
+	
+	//form a new url with the parameter 'offset=' at the end
+	$url_offset = form_new_url('offset');
+	
+	
+	$offset_arr = [10, 20, 50];
+	
+	$scripts[] = "<script>
+					function change_page(){
+						var page = $('#page option:selected').text();
+						$(location).attr('href', '$url' + page);
+						console.log(page);
+					}
+				</script>";
+				
+	$scripts[] = "<script>
+					function change_number(){
+						var offset_page = $('#offset_page option:selected').text();
+						$(location).attr('href', '$url_offset' + offset_page);
+						console.log(offset_page);
+					}
+				</script>";
+	
+?>
+
+<div id="page_nav">
+
+	<select id="page" onchange="change_page()">
+	<!-- onchange="change_page()"> -->
+	
+	<?php
+				
+	for($i = 1; $i <= $pages; $i++){
+		if($page_current == $i){
+			echo '<option selected="selected" value="page_' . $i . '">' . $i . '</option>';
+		} else {
+			echo '<option value="page_' . $i . '">' . $i . '</option>';
+		}
+	}
+	?>
+
+	</select>
+	
+	
+	<select id="offset_page" onchange="change_number()">
+		<?php 
+		
+		
+		
+		
+		foreach($offset_arr as $offset_value){
+			//offset comes from store.php
+			if($offset_value == $offset){
+				echo '<option selected="selected" value="' . $offset_value . '">' . $offset_value . '</option>';
+			} else {
+				echo '<option value="' . $offset_value . '">' . $offset_value . '</option>';
+			}
+		}
+		
+		?>
+	</select>
+	
+</div>

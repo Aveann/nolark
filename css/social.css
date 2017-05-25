@@ -1,0 +1,34 @@
+.social a{ 
+	font-size: 30px; 
+	padding: 7px;
+	/* /* transition: all .5s ease; */
+	margin: 5px;
+} 
+
+.fa-facebook {
+  color: #3B5998;
+}
+
+.fa-twitter {
+  color: #55ACEE;
+}
+
+.fa-google {
+  color: #dd4b39;
+
+}
+
+.fa-linkedin {
+  color: #007bb5;
+
+}
+
+.fa-youtube {
+  color: #bb0000;
+
+}
+
+.fa-instagram {
+  color: #125688;
+
+}
